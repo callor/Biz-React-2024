@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./css/App.css";
+import Hello from "./component/Hello";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -9,17 +10,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <Hello />
     </div>
   );
-}
+};
 
+// App 이라는 함수를 다른곳에서 import 할수 있도록 하는 선언문
 export default App;
