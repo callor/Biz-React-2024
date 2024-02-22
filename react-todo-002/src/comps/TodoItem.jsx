@@ -1,13 +1,25 @@
 import "../css/TodoItem.css";
-const TodoItem = ({ item }) => {
+const TodoItem = ({ item, todoComplete, todoDelete }) => {
   const onCompleteClick = (seq) => {
-    alert(seq);
+    todoComplete(seq);
+  };
+  const onDeleteClick = (seq) => {
+    if (window.confirm("TODO 데이터를 삭제할까요?")) {
+      todoDelete(seq);
+    }
   };
 
   return (
-    <div className={item.complete ? "todoItem complete" : "todoItem"}>
-      <div className="delete">&times;</div>
-      <div className="content">{item.todo}</div>
+    <div className="todoItem">
+      <div className="delete" onClick={() => onDeleteClick(item.seq)}>
+        &times;
+      </div>
+      <div
+        className={item.complete ? "content ok" : "content"}
+        onClick={() => onCompleteClick(item.seq)}
+      >
+        {item.todo}
+      </div>
       <div
         className="complete"
         onClick={() => onCompleteClick(item.seq)}

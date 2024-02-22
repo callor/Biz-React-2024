@@ -28,6 +28,13 @@
   }
 }
 
+.todoItem .content.ok {
+  color: #999;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+}
+
 .todoItem .content {
   flex: 1;
   text-align: left;

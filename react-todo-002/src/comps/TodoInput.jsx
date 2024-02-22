@@ -2,6 +2,7 @@ import "../css/TodoInput.css";
 const TodoInput = ({ todoItem, setTodoItem, todoInsert }) => {
   const onInsertHandler = () => {
     todoInsert();
+    setTodoItem("");
   };
 
   const onChangeHander = (e) => {
@@ -17,7 +18,7 @@ const TodoInput = ({ todoItem, setTodoItem, todoInsert }) => {
         onChange={onChangeHander}
       />
       <button
-        disabled={todoItem.length < 3}
+        disabled={todoItem.length < 2}
         onClick={onInsertHandler}
       >
         추가
