@@ -1,0 +1,36 @@
+.todoItem {
+  display: flex;
+  gap: 3px;
+}
+
+.todoItem div {
+  padding: 8px;
+}
+
+.todoItem {
+  .delete,
+  .complete {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ddd;
+    opacity: 0;
+    transition: 0.7s;
+  }
+  &:hover .delete,
+  &:hover .complete {
+    opacity: 1;
+  }
+  .delete:hover,
+  .complete:hover {
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 50px;
+  }
+}
+
+.todoItem .content {
+  flex: 1;
+  text-align: left;
+  cursor: pointer;
+  font-size: 20px;
+}
