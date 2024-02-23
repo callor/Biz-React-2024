@@ -1,0 +1,20 @@
+/*
+css-module(modula css)
+React 에서 사용하는 표준 HTML 과 다른 형태의 CSS
+각 컴포넌트에서 사용하는 CSS, className 들의 충돌을 방지
+*/
+.main {
+  width: 50vw;
+  margin: 10px auto;
+  /* border: 1px solid #ddd; */
+  display: flex;
+  gap: 5px;
+}
+
+.aside {
+  flex: 1;
+  padding: 5px;
+  &:nth-of-type(1) {
+    border-right: 1px solid #ddd;
+  }
+}
