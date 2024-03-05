@@ -1,0 +1,49 @@
+section.book.main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px auto;
+  article.body {
+    display: flex;
+  }
+  aside.list {
+    flex: 1;
+    padding: 5px;
+    background-color: #eee;
+    ul {
+      list-style-type: none;
+      li {
+        padding: 5px;
+        &:nth-of-type(odd) {
+          background-color: #ddd;
+        }
+        &:hover {
+          background-color: #ccc;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  aside.detail {
+    flex: 3;
+  }
+}
+
+div.book.search {
+  padding: 10px;
+  text-align: center;
+  input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    &:focus {
+      border: 1px solid green;
+    }
+    &:hover {
+      background-color: #ddd;
+      cursor: pointer;
+    }
+  }
+}
