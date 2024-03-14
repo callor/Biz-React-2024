@@ -21,3 +21,11 @@ model inventory_items {
   description String?
   visible     Boolean   @default(false)
 }
+
+model tbl_quest {
+  seq Int @id @default(autoincrement())
+  question String
+  answer1 String
+  answer2 String
+  answer3 String
+}
