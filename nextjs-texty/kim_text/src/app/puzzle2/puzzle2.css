@@ -1,0 +1,68 @@
+/* 달력 */
+section {
+  width: 50%;
+  margin: 0 auto;
+}
+.dateHead div {
+  background: #0070f3;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+
+.grid div {
+  padding: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.rap {
+  max-width: 820px;
+  padding: 0 1.4rem;
+  /* margin-top: 1.4rem; */
+}
+
+.dateHead {
+  margin: 0.4rem 0;
+}
+
+div.input {
+  display: flex;
+  justify-content: center;
+}
+
+input,
+button.button {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 0.7rem 0.4rem;
+  font-size: 15px;
+  background-color: transparent;
+  color: #0070f3;
+}
+button.button {
+  font-weight: bold;
+}
+
+ul.text {
+  list-style: none;
+  margin-left: -30px;
+}
+li.text {
+  font-size: 13px;
+  color: #0070f3;
+  text-align: center;
+  margin-bottom: -10px;
+}

@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.maina {
+  border: 2px solid #42414d;
+  text-align: center;
+  width: 30%;
+  height: 80%;
+  padding: 5px;
+}
+
+.title {
+  margin: 20px auto;
+  margin-top: 30px;
+}
+
+.quizSub {
+  height: 70px;
+  background: #eee;
+  padding: 10px 16px;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+  justify-items: center;
+}
+
+.quizCard {
+  background: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.question {
+  height: 200px;
+  font-size: 18px;
+  text-align: center; /* 텍스트 가운데 정렬 */
+  margin: 0 auto; /* 상하 마진 0, 좌우 마진 자동 */
+  width: 90%; /* 부모 요소에 대해 90%의 너비 */
+  /* padding: 0 5%; 내용물이 경계선에 닿지 않도록 패딩 설정 */
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.answerButton {
+  background: #ddd;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.answerButton:hover {
+  background: #ccc;
+}
+
+.dotSeparated {
+  white-space: pre-line;
+}
+
+.hoverEffect {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 50px;
+
+  font-size: 20px;
+}

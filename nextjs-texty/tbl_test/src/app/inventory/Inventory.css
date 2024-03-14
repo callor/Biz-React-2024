@@ -1,0 +1,59 @@
+/* Inventory.css */
+
+.inventory {
+  position: fixed;
+  bottom: 3%;
+  left: 15%;
+  width: 70%;
+  /* background-color: #f9f9f9; */
+  padding: 20px;
+  /* border-top: 1px solid #ddd; */
+}
+
+.item_box {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+.items {
+  flex: 1;
+}
+
+li.item {
+  font-weight: bold;
+  color: #0070f3;
+  border-bottom: 1px solid #0070f3;
+  margin: 5px;
+  cursor: pointer;
+}
+
+section.item_texts {
+  top: 5px;
+  flex: 3;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative; /* 상대 위치 설정 */
+}
+
+h2.title {
+  background-color: #0070f3;
+  color: white;
+}
+
+section.item_texts > .item_text {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+button.cancel {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #0070f3;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}

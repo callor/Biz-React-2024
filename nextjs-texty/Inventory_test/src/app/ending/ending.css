@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  overflow: hidden;
+}
+.ending {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 900px 0;
+  border-radius: 10px;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+.scroll {
+  animation: scrollCredits 20s linear forwards; /* 60초 동안 천천히 아래로 이동 */
+}
+
+@keyframes scrollCredits {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+.ending h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.ending h4 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}

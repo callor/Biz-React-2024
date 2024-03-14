@@ -1,0 +1,46 @@
+main {
+  width: 50%;
+  margin: 0 auto;
+}
+.square {
+  border: 1px solid #0070f3;
+  background-color: transparent;
+  padding: 40px 45px;
+}
+
+section.dial {
+  border-collapse: collapse;
+  margin-top: 50px;
+}
+.square:focus {
+  background-color: #0070f3;
+}
+div {
+  display: flex;
+  justify-content: center;
+}
+
+div.inputs {
+  display: flex;
+  width: 40vh;
+  margin: 10px auto;
+  margin-top: 20px;
+}
+
+.input {
+  flex: 5;
+  margin: 0 auto;
+  padding: 6px 0;
+  font-size: large;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.button {
+  background-color: transparent;
+  border: 1px solid black;
+  font-weight: bold;
+  color: #0070f3;
+  flex: 1;
+  margin: 0 2px;
+  border-radius: 10px;
+}

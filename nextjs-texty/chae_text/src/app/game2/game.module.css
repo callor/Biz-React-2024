@@ -1,0 +1,34 @@
+.narration {
+  /* 나레이션 스타일 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gameStart {
+  /* 게임 시작 화면 스타일 */
+  /* width: 550px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 1px solid rgb(255, 0, 0); */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.narration {
+  /* 기존 스타일링을 유지하면서 애니메이션 추가 */
+  animation: fadeIn 3s ease-in-out forwards;
+  opacity: 0; /* 초기 opacity 값을 0으로 설정 */
+}

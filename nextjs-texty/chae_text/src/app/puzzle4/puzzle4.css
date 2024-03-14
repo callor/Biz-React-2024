@@ -1,0 +1,84 @@
+body {
+  overflow: hidden;
+}
+
+div.color_text {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1.text {
+  color: #0070f3;
+  margin: 15px;
+}
+.color-box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+button {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  padding: 0.7rem 0.4rem;
+  font-size: 15px;
+  background-color: transparent;
+  color: #0070f3;
+  font-weight: bold;
+  margin-top: 15px;
+}
+button:hover {
+  color: white;
+  background-color: #0070f3;
+}
+button:focus {
+  color: black;
+}
+.button {
+  flex: 1;
+  width: 100%;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(10px);
+  }
+  10%,
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-10px);
+  }
+}
+
+.shake {
+  animation: shake 2s infinite; /* 1초 동안 실행되며 무한 반복 */
+}

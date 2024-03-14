@@ -1,0 +1,52 @@
+.cup-puzzle {
+  text-align: center;
+  padding: 20px;
+}
+
+.cups-container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center; /* 컵들을 가운데 정렬 */
+  gap: 20px; /* 컵들 사이의 간격 조절 */
+}
+
+h1{
+  margin-top: 80px;
+}
+
+.cup {
+  width: 130px;
+  height: 150px;
+  background-color: #f4f4f4;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cup:hover {
+  transform: translateY(-5px);
+}
+
+.water {
+  background-color: #00f;
+  background: linear-gradient(to top, #007bff, #85d7ff);
+  width: 85%;
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: height 0.5s ease-in-out;
+  margin-right: 5px;
+}
+
+p {
+  position: relative;
+  color: #333;
+  font-weight: bold;
+}

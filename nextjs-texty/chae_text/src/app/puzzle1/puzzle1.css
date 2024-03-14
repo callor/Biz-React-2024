@@ -1,0 +1,46 @@
+main.puzzle1 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+section.dial {
+  border-collapse: collapse;
+  margin-top: 50px;
+}
+
+button.square {
+  border: 1px solid #0070f3;
+  background-color: transparent;
+  padding: 40px 45px;
+}
+
+button.square:focus {
+  background-color: #0070f3;
+}
+div.nums {
+  display: flex;
+  justify-content: center;
+}
+
+div.puzzle1.inputs {
+  display: flex;
+  width: 40vh;
+  margin: 10px auto;
+  margin-top: 20px;
+  gap: 3px;
+  .text_box {
+    flex: 5;
+    font-size: large;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.7rem 0.4rem;
+  }
+  .button {
+    background-color: transparent;
+    border: 1px solid black;
+    font-weight: bold;
+    color: #0070f3;
+    flex: 1;
+    border-radius: 10px;
+  }
+}

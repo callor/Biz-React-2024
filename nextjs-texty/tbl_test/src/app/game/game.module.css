@@ -1,0 +1,20 @@
+.narration {
+  /* 나레이션 스타일 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gameStart {
+  /* 게임 시작 화면 스타일 */
+  /* width: 550px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 1px solid rgb(255, 0, 0); */
+}

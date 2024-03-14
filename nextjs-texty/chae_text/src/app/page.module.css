@@ -1,0 +1,40 @@
+/* 인트로 화면 세팅*/
+.line {
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  border: 2px solid black;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.header {
+  padding: 16px;
+  background: #f3f3f3;
+  border-bottom: 2px solid black;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  background: #f3f3f3;
+  border-top: 2px solid black;
+}
+
+.penIcon {
+  /* Replace with actual pen icon representation */
+  width: 20px;
+  height: 20px;
+  background: black;
+}

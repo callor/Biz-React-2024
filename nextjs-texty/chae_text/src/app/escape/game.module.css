@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main {
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  height: 70%;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  word-wrap: break-word; /* 단어가 경계를 넘어갈 경우 자동으로 줄바꿈 */
+  overflow-wrap: break-word; /* 오래된 브라우저 호환성을 위해 추가 */
+  margin: 0 auto; /* 중앙 정렬을 위해 마진 추가 */
+  margin-bottom: 20px;
+  padding: 20px; /* 패딩 추가로 텍스트 주변 여백 설정 */
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.optionButton {
+  width: 200px;
+  height: fit-content;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.optionButton:hover {
+  background-color: #0056b3;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  /* 기본적으로 화면을 숨깁니다. */
+  opacity: 0;
+  /* 애니메이션을 10초 동안 실행합니다. */
+  animation: fadeIn 10s forwards;
+}
