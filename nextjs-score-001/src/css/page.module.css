@@ -1,0 +1,66 @@
+.main {
+  display: flex;
+  padding: 2rem;
+  /* min-height: 100vh; */
+}
+
+.main section {
+  flex: 1;
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid blue;
+}
+
+.list {
+  height: calc(100vh - 10px - 4rem);
+  overflow: auto;
+}
+
+.list::scrollbar {
+  width: 0px;
+  background-color: #eee;
+}
+
+.list:hover::scrollbar {
+  width: 10px;
+}
+
+.list:hover::scrollbar-thumb {
+  background-color: green;
+}
+
+.list::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+/* .list:hover::-webkit-scrollbar {
+  width: 10px;
+} */
+
+.list:hover::-webkit-scrollbar-thumb {
+  background-color: green;
+}
+
+/* .list::-ms-scrollbar {
+  width: 0px;
+  background-color: #eee;
+}
+
+.list:hover::-ms-scrollbar {
+  width: 10px;
+}
+
+.list:hover::-ms-scrollbar-thumb {
+  background-color: green;
+} */
+
+/* Table 세로화면으로 볼때 화면 구성 변경:반응형 */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .main section:nth-of-type(1) {
+    order: 2;
+  }
+}

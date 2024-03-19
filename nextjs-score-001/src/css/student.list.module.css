@@ -1,0 +1,32 @@
+.body {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  width: 80%;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.item strong,
+.item span {
+  flex: 1;
+  text-align: left;
+}
+
+.title {
+  background-color: #aaa;
+  color: white;
+  font-weight: 900;
+}

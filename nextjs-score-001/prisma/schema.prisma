@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tbl_score {
+  s_stnum   String @db.VarChar(5)
+  s_subject String @db.VarChar(10)
+  s_score   Int
+
+  @@id([s_stnum, s_subject])
+}
+
+model tbl_student {
+  st_num   String  @id @unique(map: "st_num") @db.VarChar(5)
+  st_name  String  @db.VarChar(10)
+  st_dept  String? @db.VarChar(20)
+  st_grade String? @db.VarChar(1)
+  st_tel   String? @db.VarChar(13)
+  st_addr  String? @db.VarChar(125)
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model tbl_temp_score {
+  s_stnum String? @db.VarChar(5)
+  s_kor   String? @db.VarChar(10)
+  s_eng   String? @db.VarChar(10)
+  s_math  String? @db.VarChar(10)
+  s_music String? @db.VarChar(10)
+  s_art   String? @db.VarChar(10)
+  s_sw    String? @db.VarChar(10)
+  s_db    String? @db.VarChar(10)
+
+  @@ignore
+}

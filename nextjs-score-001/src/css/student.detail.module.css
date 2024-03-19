@@ -1,0 +1,20 @@
+.body {
+  width: 80%;
+  margin: 5px auto;
+}
+
+/*  > .body 와 가장 근접한 자식 div 에만 적용하기 */
+.body > div {
+  display: flex;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.body strong {
+  flex: 1;
+}
+
+.body span {
+  flex: 3;
+}
