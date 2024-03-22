@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 주문서 관리 프로젝트
 
-## Getting Started
+## Prisma 설정
 
-First, run the development server:
+- `npx prisma init`
+- `prisma/schema.prisma` 파일과 `.env` 파일 확인
+- `.env` 파일에 DB 연결 정보 설정
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```.env
+DATABASE_URL="mysql://root:!Biz8080@localhost:3365/orderDB"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `prisma/schma.prisma` 파일에서 다음 항목 확인. provider `mysql` 로 변경
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```schema.prisma
+    datasource db {
+        provider = "mysql"
+        url      = env("DATABASE_URL")
+    }
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 이미 적용된 DB schema import : `npx prisma db pull`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- prisma 설정 적용 : `npx prisma generate` 실행
+- `schema.prisma` 파일과 `package.json` 파일 확인

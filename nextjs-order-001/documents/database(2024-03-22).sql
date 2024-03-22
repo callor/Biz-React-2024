@@ -184,8 +184,68 @@ ADD CONSTRAINT fk_op FOREIGN KEY 여기아님  (op_onum)
 REFERENCES tbl_orders(o_num);
 
 -- 주문원장, 고객코드를 연결하기 위한 조치
+-- 주문원장에 고객코드 칼럼이 없는 상태
+-- 1. 주문원장에 고객코드 칼럼을 추가하고
+-- 2. 주문-고객 Relation Table 을 참조하여
+-- 3. 주문번호에 맞는 고객 코드를 주문원장 Table 에 Update
+
+-- 1. 주문원장에 고객코드 칼럼을 추가하기
+-- 이미 주문원장과 주문-고객 테이블에 데이터가 많이 있는 상태
+ALTER TABLE tbl_orders
+ADD COLUMN o_ccode varchar(5);
 
 
+/*
+Sub Query 를 이용한 다른 Table 에서 데이터를 조회하여
+다수 Update 를 실행하는 것
+1. UPDATE tbl_orders 명령이 Sub Query 가 있음을 알게되면
+2. SELECT * FROM tbl_orders 명령을 자체적으로 실행한다
+3. 이 결과는 List type 의 데이터가 되고
+4. 자체적으로 forEach() 문이 실행된다.
+5. tbl_orderlist.forEach(item) 처럼 실행된다.
+6. item 값을 Sub Query (...) 로 내려 보낸다
+7. SELECT * FROM tbl_order_customer
+	WHERE item.o_num 와 같은 내부 Query 가 실행된다.
+8. 결과값으로 oc_code 값을 return 한다.
+9. SET o_ccode = return(값) 이 실행되며 o_ccode 칼럼값이
+		변경된다.
+*/
+-- MySQL 은 Update, Delete 를 2개 이상 레코드(데이터,Row)에 
+-- 대하여 시행할수 없도록 초기 세팅이 되어 있다
+-- 현재 tbl_orders 테이블 전체 데이터에 Update 를 실행해야
+-- 하므로 잠시 Safe Update 를 해제 한다
+SET SQL_SAFE_UPDATES = 0;
+UPDATE tbl_orders O
+SET o_ccode = 
+(
+	SELECT OC.oc_ccode
+    FROM tbl_order_customer OC
+    WHERE O.o_num = OC.oc_onum
+);
+SET SQL_SAFE_UPDATES = 1;
+
+SELECT * FROM tbl_orders;
+
+-- 데이터 Update 확인
+SELECT *
+FROM tbl_orders O
+	JOIN tbl_customer C
+		ON O.o_ccode = C.c_code;
+
+-- FK 설정을 위한 검증
+-- LEFT JOIN을 실행할때
+-- 어떤 Table 을 LEFT 왼쪽에 둘것인가?
+-- 1:N 의 관계는 무조건 N 인 테이블 - FK 설정하는 Table
+-- 1:1 의 관계는 ON 조건에 설정하는 칼럼이 PK 가 아닌 Table        
+SELECT *
+FROM tbl_orders O
+	LEFT JOIN tbl_customer C
+		ON O.o_ccode = C.c_code
+WHERE C.c_code IS NULL;        
+
+ALTER TABLE tbl_orders
+ADD CONSTRAINT fk_oc FOREIGN KEY (o_ccode)
+REFERENCES tbl_customer(c_code);
 
 
 

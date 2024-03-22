@@ -1,0 +1,42 @@
+.header {
+  padding: 1.2rem;
+  text-align: center;
+  background-color: green;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.nav {
+  background-color: black;
+  color: white;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav li {
+  margin: 5px;
+  margin-bottom: 8px;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 8px 12px 1px 12px;
+  color: inherit;
+  border-bottom: 3px solid transparent;
+  transition: 0.7s ease-in-out;
+}
+
+.nav a:hover {
+  border-bottom: 3px solid green;
+}
+
+.nav .order {
+  margin-left: auto;
+}
+
+.nav .user {
+  margin-left: auto;
+}
