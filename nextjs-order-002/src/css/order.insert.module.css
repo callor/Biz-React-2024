@@ -9,11 +9,11 @@
   margin: 3px;
   border-radius: 10px;
   outline: none;
-  border: 1px solid #eee;
+  border: 1px solid blue;
 }
 
 .form input:focus {
-  border: 1px solid #aaa;
+  border: 1px solid green;
 }
 
 .custom {
@@ -59,4 +59,13 @@ absolute 성질을 사용할때는 반드시 명심해야 한다
 .cust_list li:hover {
   border-bottom: 2px solid blue;
   cursor: pointer;
+}
+
+.product_list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.product {
+  margin-left: 20px;
 }

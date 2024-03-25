@@ -3,7 +3,7 @@ import { findByCustomer } from "@/app/api/customer";
 import css from "@/css/order.insert.module.css";
 import { useCallback, useEffect, useState } from "react";
 import CustomSearch from "./CustomSearch";
-import { findByCcode } from "@/app/api/order";
+import { getOrderListByPcode } from "@/app/api/order";
 const OrderInsert = () => {
   const [search, setSearch] = useState("");
   const [customList, setCustomList] = useState([]);
@@ -38,8 +38,9 @@ const OrderInsert = () => {
 
   useEffect(() => {
     const fetchOrder = async () => {
+      console.log("fetch");
       if (customer && customer?.c_code) {
-        const result = await findByCcode(customer.c_code);
+        const result = await getOrderListByPcode(customer.c_code);
         setOrderList([...result]);
       }
     };
@@ -84,10 +85,20 @@ const OrderInsert = () => {
       </form>
       <div>
         <h3>주문목록</h3>
-        <ul>
+        <ul className={css.product_list}>
           {orderList.map((order) => (
             <li>
-              {order.o_num}, {order.o_date}
+              <p>
+                {order.o_num}, {order.o_date}
+              </p>
+              <ul className={css.product}>
+                {order.products.map((item) => (
+                  <li>
+                    {item.op_pcode}, {item.product.p_name},
+                    {item.product.p_item},{item.product.p_price}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>

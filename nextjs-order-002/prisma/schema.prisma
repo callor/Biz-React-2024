@@ -15,9 +15,23 @@ model tbl_customer {
   @@fulltext([c_name,c_tel])
 }
 
+model tbl_product {
+  p_code  String @id @db.VarChar(6)
+  p_name  String @db.VarChar(25)
+  p_item  String @db.VarChar(25)
+  p_price Int
+
+  products tbl_order_product[]
+
+}
+
+
 model tbl_order_product {
   op_onum  String @db.VarChar(6)
   op_pcode String @db.VarChar(6)
+
+  orders tbl_orders @relation(fields:[op_onum], references:[o_num])
+  product tbl_product @relation(fields:[op_pcode], references:[p_code])
 
   @@id([op_onum, op_pcode])
   @@index([op_pcode], map: "fk_p")
@@ -28,12 +42,8 @@ model tbl_orders {
   o_date  String  @db.VarChar(10)
   o_ccode String? @db.VarChar(5)
 
+  products tbl_order_product[]
+
   @@index([o_ccode], map: "fk_oc")
 }
 
-model tbl_product {
-  p_code  String @id @db.VarChar(6)
-  p_name  String @db.VarChar(25)
-  p_item  String @db.VarChar(25)
-  p_price Int
-}
