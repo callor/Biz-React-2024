@@ -1,0 +1,62 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.form input {
+  padding: 8px 12px;
+  margin: 3px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #eee;
+}
+
+.form input:focus {
+  border: 1px solid #aaa;
+}
+
+.custom {
+  position: relative;
+}
+
+/*
+div.custom box 내부에 ul.cust_list box 를 서로 어울리게
+강제 배치를 하려고 한다
+이때 div.custom 에 posion:relative 를 설정하겨
+ul.cust_list box 에 posion:absolute 를 설정하면
+top, left, right, bottom 등의 좌표를 설정하여
+서로 어울리는 layout 을 설정할 수 있다
+
+만약 div.custom Box 에 relative 를 설정하지 않으면
+absolute Box 는 body, html 을 부모로 인식하고 엉뚱한곳에
+box 를 그려버린다
+
+모든 block tag 는 position:relative 성질을 갖는다
+하지만 relative box 는 아니다.
+absolute 성질을 사용할때는 반드시 명심해야 한다
+*/
+.cust_list {
+  list-style-type: none;
+  background-color: #ccc;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cust_list li {
+  border-bottom: 2px solid transparent;
+  padding: 8px;
+}
+.cust_list li:nth-of-type(odd) {
+  background-color: #eee;
+}
+
+.cust_list li:hover {
+  border-bottom: 2px solid blue;
+  cursor: pointer;
+}

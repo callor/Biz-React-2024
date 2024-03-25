@@ -1,8 +1,8 @@
 "use client";
-import css from "@/css/order.module.css";
+import css from "@/css/order.main.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { selectAll } from "../api/oder";
+import { selectAll } from "../api/order";
 
 const OrderPage = () => {
   const [orderList, setOrderList] = useState([]);

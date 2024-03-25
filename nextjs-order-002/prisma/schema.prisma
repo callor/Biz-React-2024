@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tbl_customer {
+  c_code String @id @db.VarChar(5)
+  c_name String @db.VarChar(25)
+  c_tel  String @db.VarChar(15)
+  @@fulltext([c_name,c_tel])
+}
+
+model tbl_order_product {
+  op_onum  String @db.VarChar(6)
+  op_pcode String @db.VarChar(6)
+
+  @@id([op_onum, op_pcode])
+  @@index([op_pcode], map: "fk_p")
+}
+
+model tbl_orders {
+  o_num   String  @id @db.VarChar(6)
+  o_date  String  @db.VarChar(10)
+  o_ccode String? @db.VarChar(5)
+
+  @@index([o_ccode], map: "fk_oc")
+}
+
+model tbl_product {
+  p_code  String @id @db.VarChar(6)
+  p_name  String @db.VarChar(25)
+  p_item  String @db.VarChar(25)
+  p_price Int
+}
