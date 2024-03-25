@@ -260,6 +260,9 @@ FullText 는 단어, 구문 검색기능을 수행한다.
 */
 ALTER TABLE tbl_customer 
 ADD FULLTEXT(c_name);
+ALTER TABLE tbl_customer 
+ADD FULLTEXT(c_tel);
+
 
 ALTER TABLE tbl_customer
 DROP INDEX c_name;

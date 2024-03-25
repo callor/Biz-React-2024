@@ -10,6 +10,8 @@ const OrderInsert = () => {
   const [customer, setCustomer] = useState("");
   const [orderList, setOrderList] = useState([]);
 
+  const [productList, setProductList] = useState([]);
+
   /**
    * useCallback()
    * State 생성 영역(컴포넌트 함수내의 return 명령 이전의 영역)에
@@ -44,6 +46,12 @@ const OrderInsert = () => {
     fetchOrder();
   }, [customer]);
 
+  /**
+   * 상품검색 input box 에 상품이름을 입력하면
+   * tbl_product 에서 상품정보를 fetch 하고
+   * 상품검색 input box 아래에 목록을 보여주는 코드 작성
+   */
+
   return (
     <article className={css.main}>
       <form className={css.form}>
@@ -69,7 +77,7 @@ const OrderInsert = () => {
           )}
         </div>
         <div>
-          <input placeholder="상품코드" />
+          <input placeholder="상품검색" />
           <input placeholder="주문수량" />
           <button>추가</button>
         </div>
