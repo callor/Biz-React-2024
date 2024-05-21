@@ -1,0 +1,15 @@
+.main {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+.main aside {
+  border: 1px solid blue;
+  height: 100%;
+}
+.left_side {
+  flex: 1;
+}
+.right_side {
+  flex: 3;
+}

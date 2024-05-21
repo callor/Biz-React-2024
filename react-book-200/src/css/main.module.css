@@ -1,0 +1,20 @@
+.main_nav {
+  background-color: #777;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  margin: 0;
+}
+.main_nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem 1.2rem;
+  display: inline-block;
+}
+.main_nav a:hover {
+  background-color: #555;
+}
+
+a.login {
+  margin-left: auto;
+}
