@@ -3,6 +3,7 @@ import "./css/App.css";
 import MainNav from "./layout/MainNav";
 import { Outlet } from "react-router-dom";
 import { UserContextProvider } from "./provider/UserProvider";
+import { BookContextProvider } from "./provider/BookProvider";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       </header>
       <UserContextProvider>
         <MainNav />
-        <Outlet />
+        <BookContextProvider>
+          <Outlet />
+        </BookContextProvider>
       </UserContextProvider>
     </div>
   );
